@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@layer components {
+  .glass {
+    @apply bg-white/1 border border-white/20 rounded-xl shadow-lg shadow-black/30 text-shadow-lg/50 transition duration-300
+  }
+  .glow-green {
+    @apply bg-[radial-gradient(circle_at_70%_30%,rgba(81,230,41,0.1),transparent_80%)]
+  }
+  .glow-red {
+    @apply bg-[radial-gradient(circle_at_70%_30%,rgba(230,81,41,0.1),transparent_80%)]
+  }
+  .glow-green-xl {
+    @apply bg-[radial-gradient(ellipse_300%_200%_at_30%_50%,rgba(81,230,41,0.1),transparent_80%)]
+  }
+  .glow-red-xl {
+    @apply bg-[radial-gradient(ellipse_300%_200%_at_30%_50%,rgba(230,81,41,0.1),transparent_80%)]
+  }
+}
+
+#app {
+  color: white
+}
+
+:root {
+  background-color: black;
+  --font-sans: 'Elms Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+#app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(400rem 200rem at 10% 20%, rgba(99, 101, 241, 0.205), transparent 30%),
+    radial-gradient(80rem 100rem at 75% 20%, rgba(255, 21, 224, 0.13), transparent 30%),
+    radial-gradient(80rem 200rem at 90% 80%, rgba(236,72,153,0.14), transparent 30%),
+    radial-gradient(160rem 200rem at 20% 80%, rgba(231, 228, 44, 0.14), transparent 30%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#app::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255,255,255,0.02);
+ }
